@@ -1,0 +1,136 @@
+commit 46a9bbbe5ffc6fbd0a4f6962089666be20e8d3e4
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:59:22 2022 +0200
+
+    poistettiin 1 ja muokattiin 2
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 1 -
+ 2 files changed, 1 deletion(-)
+
+commit 0fe7353f14a3ad89809d6fd8108e8edbfefdb7d8
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:57:03 2022 +0200
+
+    lisättiin viel file1
+
+ file1 | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ed6b2c706a8815095cc4d8720452be768e3599f3
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:56:18 2022 +0200
+
+    muokattiin ja peruttiin
+
+ tiedostoja/file3 | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 5022608f33fdf5b8017aa4c18742e7f3ac9b0556
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:51:27 2022 +0200
+
+    luotiin hakemisto
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 1 +
+ tiedostoja/file3 | 0
+ 3 files changed, 1 insertion(+)
+
+commit 6474ab7845f5d5f22403a4c6ca3cd94d21deea78
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:39:25 2022 +0200
+
+    muokattiin vähäsen
+
+ eka.txt    | 5 +----
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+commit 6f7f153a9c454cf2eb2ffcca8065462c9338ccc6
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:36:09 2022 +0200
+
+    vaihdettiin tiedoston nimeä
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 13d270427b1b883e838cc6d9033322080d7afa6f
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:31:01 2022 +0200
+
+    poistetaan toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 48ec971b807dd7a448df47ab77cac85b25cd71b0
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:28:06 2022 +0200
+
+    tiedosto.txt
+
+ tiedosto.txt | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+commit 1bdf4925020d9e2c1456e58bfdce79d3354b82ec
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 18:26:22 2022 +0200
+
+    muokattiin ja lisättiin tiedosto
+
+ tiedosto.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 883840b7084cba398028816d51593939829e8a18
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 17:59:20 2022 +0200
+
+    luotiin ja lisättiin stuff ja jotain
+
+ stuff/jotain.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 20158f60614965ae3abedffcbe2e598236c8e9cf
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 17:56:18 2022 +0200
+
+    muokattiin toista ja kolmatta
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit a0ae12658d605242c92b646459b092afd30f85cd
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 17:52:21 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit c71dadb7b3a337a38936de416b8551e1d3df923c
+Author: mirelle01 <lybackmirelle@gmail.com>
+Date:   Fri Mar 18 17:47:11 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+kurssit
+└── ot2022
+    └── viikko1
+        └── unicafe
+            ├── poetry.lock
+            ├── pyproject.toml
+            └── src
+                ├── index.py
+                ├── kassapaate.py
+                ├── maksukortti.py
+                └── tests
+                    ├── __init__.py
+                    └── maksukortti_test.py
