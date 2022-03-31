@@ -11,8 +11,8 @@
       Vankila -- Ruutu
       Sattuma -- Ruutu
       Yhteismaa -- Ruutu
-      Asema -- Ruutu
-      Laitos -- Ruutu
+      Asema "4"-- Ruutu
+      Laitos "2"-- Ruutu
       Katu -- Ruutu
       Katu -- Pelaaja
       YhteismaaKortti --> Yhteismaa
