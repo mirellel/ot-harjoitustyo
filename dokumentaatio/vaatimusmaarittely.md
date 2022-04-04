@@ -1,6 +1,7 @@
 # Vaatimus määrittely
 
 ## Sovelluksen tarkoitus
+####(minun piti ensin tehdä miinaharava-peli, mutta se osoittautui hieman liian vaikeaksi)
 Sovelluksella voi pelata wordle-tyyppistä peliä
 Wordle on newyorktimes -lehden sanaarvauspeli, jossa pelaajan tulee kuudella vuorolla arvata oikein 5-kirjaiminen 
 englanninkielinen sana. Peli näyttää jokaisen arvauksen jälkeen oikealla paikalla olevat kirjaimet vihreällä ja oikeassa sanassa olevat, mutta arvauksessa väärässä kohdassa olevat kirjaimet keltaisella
