@@ -10,3 +10,5 @@
 
 [työaikakirjanpito](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
+[chanelog](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/chanelog)
+
