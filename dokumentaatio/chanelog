@@ -1,0 +1,7 @@
+# Changelog
+
+## Viikko 3
+
+- Pelin pelaaminen onnistuu
+- CheckGuess -luokka tarkastaa pelaajan arvauksen
+- Testattu, että peli tarkastaa vastaukset oikein
