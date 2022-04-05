@@ -20,7 +20,7 @@ def main():
     window = pygame.display.set_mode((width, height))
     window.fill(white)
 
-    file = open("wordlist.txt", "r")
+    file = open("/home/mirelle/ot-harjoitustyö/src/wordlist.txt", "r")
     wordlist = [word.replace("\n", "") for word in file]
     word = wordlist[random.randint(0, 2000)].upper()
 
@@ -49,6 +49,7 @@ def main():
                 pygame.quit()
                 sys.exit()
 
+            # pelin lopussa voi poistua tai pelata uuden vuoron
             if win or lost:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_r:
@@ -59,23 +60,31 @@ def main():
 
             else:
                 if event.type == pygame.KEYDOWN:
+
+                    # arvauksen pyyhkiminen
                     if event.key == pygame.K_BACKSPACE:
                         if guess:
                             guess = guess[:-1]
                             curr_letter-=1
+
+                    #arvauksen tekeminen
                     elif event.key == pygame.K_RETURN:
+                        #hyväksytään vain viisikirjaiminen arvaus
                         if len(guess) == 5:
                             print(guess.lower())
+                            #tarkastetaan onko arvaus kelpaava sana
                             if guess.lower() in wordlist:
+                                #kutsutaan checkguess luokkaa tarkastamaan arvaus
                                 win = checkguess.check(turns, word, guess, window, font)
                                 turns+=1
                                 guess = ""
                                 curr_letter = 0
                                 window.fill(white, (0, 500, 500, 200))
                             else:
-                                incorrect_word = True
+                                incorrect_word = True  # merkitsee kelpaamattoman sanan
                         else:
-                            wrong_num_of_letters = True
+                            wrong_num_of_letters = True # merkitsee, jos sanassa on liian vähän kirjaimia
+                    # arvaus ilmestyy ruutuihin
                     else:
                         if len(guess) < 5:
                             if event.unicode.isalpha():
@@ -86,6 +95,7 @@ def main():
         renderGuess = font.render(guess, True, black)
         window.blit(renderGuess, (190, 530))
 
+        # väärästä sanasta tulee ilmoitus kahdeksi sekunniksi
         if incorrect_word == True:
             time2=0
             wrong_num_of_letters = False
@@ -93,7 +103,6 @@ def main():
             window.blit(text_surface, (100, 3))
             time1+=1
             
-
         if wrong_num_of_letters == True:
             incorrect_word = False
             time1=0
@@ -115,7 +124,7 @@ def main():
             guess = ""
             pygame.draw.rect(window, white, pygame.Rect(50, 10, 600, 40))
 
-        
+        # voittoessa loppukommentti riippuu vuorojen määrästä
         if win == True:
             pygame.draw.rect(window, grey, pygame.Rect(60, 210, 371, 211))
             if turns == 1:
@@ -136,6 +145,7 @@ def main():
             if turns == 6:
                 window.blit(phew,(90, 200))
                 window.blit(play_again, (60, 300))
+        # jos kuudennella vuorolla ei tule vielä voittoa, pelaaja häviää
         if turns == 6 and win != True:
             lost = True
             pygame.draw.rect(window, grey, pygame.Rect(60, 210, 371, 211))

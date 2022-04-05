@@ -31,3 +31,24 @@ class CheckGuess():
         # jos kaikki vihreää, voitto
         if guessColourCode == [green, green, green, green, green]:
             return True
+
+
+        
+    # Sama kuin ylempi, mutta muokattu testausta varten
+    def test_check(self, word, userQuess):
+        # arvauksen värit alussa
+        guessColourCode = [grey, grey, grey, grey, grey]
+        
+
+        # tarkastaa, onko arvauksessa oikeita kirjaimia
+        for i in range (0, 5):
+            # oikea kirjain väärällä paikalla merkitään keltaisella
+            if userQuess[i] in word:
+                guessColourCode[i] = yellow
+            # oikea kirjain oikealla paikalla merkitään vihreällä
+            if userQuess[i] == word[i]:
+                guessColourCode[i] = green
+
+        list(userQuess)
+        # jos kaikki vihreää, voitto
+        return guessColourCode
