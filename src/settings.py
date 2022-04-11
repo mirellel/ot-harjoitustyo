@@ -1,12 +1,12 @@
 import pygame
-from pygame.locals import *
+from pygame.locals import *  # pylint: disable=unused-wildcard-import, disable=wildcard-import
 pygame.init()
 
-#kaksi fonttikokoa
+# kaksi fonttikokoa
 font = pygame.font.SysFont("comicsansms", 40)
 largefont = pygame.font.SysFont("comicsansms", 60)
 
-#asetetaan muutama perusväri valmiiksi
+# asetetaan muutama perusväri valmiiksi
 white = (255, 255, 255)
 black = (0, 0, 0)
 green = (51, 212, 99)
@@ -22,5 +22,5 @@ great = largefont.render("Great!", True, pink)
 good = largefont.render("Good!", True, pink)
 phew = largefont.render("Phew!", True, pink)
 
-defeat = largefont.render("You lost :(", True, pink)
-play_again = font.render(f"r = replay, q = quit", True, pink)
+defeat = largefont.render("You lost", True, pink)
+play_again = font.render("r = replay, q = quit", True, pink)
