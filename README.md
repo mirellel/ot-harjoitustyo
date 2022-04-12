@@ -5,13 +5,14 @@ Sovellukseen on mahdollista rekisteröityä käyttäjänä, jolloin voi nähdä 
 
 
 ### Dokumentaatio
-[vaatimusmäärittely](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
-[työaikakirjanpito](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-[changelog](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/chanelog)
+[Changelog](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/chanelog)
 
-[käyttöohje](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
+[Käyttöohje](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
 
-[testaus](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/testaus.md)
+[Testaus](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/testaus.md)
 
+[Arkkitehtuurikuvaus](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/arkkitehtuuri.md)
