@@ -9,5 +9,9 @@ Sovellukseen on mahdollista rekisteröityä käyttäjänä, jolloin voi nähdä 
 
 [työaikakirjanpito](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 
-[chanelog](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/chanelog)
+[changelog](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/chanelog)
+
+[käyttöohje](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
+
+[testaus](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/testaus.md)
 
