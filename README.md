@@ -11,5 +11,5 @@ Sovellukseen on mahdollista rekisteröityä käyttäjänä, jolloin voi nähdä 
 
 [changelog](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/chanelog)
 
-[käyttöohje] (https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
+[käyttöohje](https://github.com/mirellel/ot-harjoitysty-/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
 
