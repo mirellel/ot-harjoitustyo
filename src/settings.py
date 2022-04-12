@@ -3,8 +3,11 @@ from pygame.locals import *  # pylint: disable=unused-wildcard-import, disable=w
 pygame.init()
 
 # kaksi fonttikokoa
-font = pygame.font.SysFont("comicsansms", 40)
-largefont = pygame.font.SysFont("comicsansms", 60)
+font = pygame.font.SysFont("Arial", 40)
+largefont = pygame.font.SysFont("Arial", 60)
+
+clock = pygame.time.Clock()
+window = pygame.display.set_mode((500, 600))
 
 # asetetaan muutama perusväri valmiiksi
 white = (255, 255, 255)
@@ -22,5 +25,7 @@ great = largefont.render("Great!", True, pink)
 good = largefont.render("Good!", True, pink)
 phew = largefont.render("Phew!", True, pink)
 
-defeat = largefont.render("You lost", True, pink)
-play_again = font.render("r = replay, q = quit", True, pink)
+defeat = largefont.render("You lost!", True, pink)
+play_again = largefont.render("REPLAY", True, pink)
+quit_game = largefont.render("QUIT", True, pink)
+start_game = font.render("START GAME", True, pink)
