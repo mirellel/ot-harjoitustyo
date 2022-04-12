@@ -1,0 +1,15 @@
+# Changelog
+
+## Viikko 3
+
+- Pelin pelaaminen onnistuu
+- CheckGuess -luokka tarkastaa pelaajan arvauksen
+- Testattu, että peli tarkastaa vastaukset oikein
+
+## Viikko 3
+- Peli aukeaa valikkoon, josta voi aloittaa pelin tai poistua 
+   - (log in -nappi ei vielä toimi)
+- Pelilogiikka eroteltu käyttöliittymästä
+- Pelilogiikka testattu
+- Pelin jälkeen avautuu valikko, josta pelaaja voi valita "REPLAY" tai "QUIT"
+
