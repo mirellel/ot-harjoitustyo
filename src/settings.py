@@ -1,5 +1,4 @@
 import pygame
-from pygame.locals import *  # pylint: disable=unused-wildcard-import, disable=wildcard-import
 pygame.init()
 
 # kaksi fonttikokoa
@@ -18,14 +17,8 @@ grey = (127, 128, 122)
 pink = (237, 140, 195)
 red = (224, 13, 35)
 
-unbelievable = largefont.render("Unbelievable!", True, pink)
-splendid = largefont.render("Splendid!", True, pink)
-wow = largefont.render("Wow!", True, pink)
-great = largefont.render("Great!", True, pink)
-good = largefont.render("Good!", True, pink)
-phew = largefont.render("Phew!", True, pink)
-
 defeat = largefont.render("You lost!", True, pink)
-play_again = largefont.render("REPLAY", True, pink)
-quit_game = largefont.render("QUIT", True, pink)
-start_game = font.render("START GAME", True, pink)
+victory = largefont.render("You won!", True, pink)
+play_again = largefont.render("Replay", True, pink)
+quit_game = largefont.render("Quit", True, pink)
+start_game = font.render("Start game", True, pink)
