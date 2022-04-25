@@ -3,10 +3,16 @@ import pygame
 from game import MainRun
 from settings import clock, window, white, pink, start_game, \
      font, largefont, victory, play_again, defeat
+from ui import login_view
+from ui.ui import UI
+from tkinter import Tk
 class Main():
     def __init__(self):
         pygame.init()
         self.game = MainRun()
+        self.login_window = Tk()
+        self.ui = UI(self.login_window)
+        
 
     def run_game(self):
         done = False
@@ -35,6 +41,9 @@ class Main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if 50 <= mouse[0] <= 450 and 250 <= mouse[1] <= 350:
                         self.run_game()
+                    if 50 <= mouse[0] <= 450 and 100 <= mouse[1] <= 200:
+                        self.ui.start()
+                        self.login_window.mainloop()
             pygame.draw.rect(window, white, pygame.Rect(50, 100, 400, 100))
             pygame.draw.rect(window, white, pygame.Rect(50, 250, 400, 100))
             if 50 <= mouse[0] <= 450 and 250 <= mouse[1] <= 350:
