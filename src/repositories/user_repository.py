@@ -11,11 +11,23 @@ class UserRepository:
 
         self._connection = connection
 
+    def create_user(self, user):
+        # tallentaa käyttäjän tietokantaan
+
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "insert into users (username, password) values (?, ?)",
+            (user.username, user.password)
+        )
+
+        self._connection.commit()
+        return user
+
     def find_all(self):
         # palauttaa kaikki käyttäjät
 
         cursor = self._connection.cursor()
-        cursor.execute('SELECT * FROM USERS')
+        cursor.execute('select * from users')
 
         rows = cursor.fetchall()
 
@@ -25,25 +37,11 @@ class UserRepository:
         # palauttaa käyttäjän käyttäjätunnuksen perusteella
         cursor = self._connection.cursor()
         cursor.execute(
-            'select * from users where username = ?',
+            "select * from users where username = ?",
             (username,)
         )
-
-        row = cursor.fetchone()
-
-        return get_user_by_row(row)
-
-    def create(self, user):
-        # tallentaa käyttäjän tietokantaan
-
-        cursor = self._connection.cursor()
-        cursor.execute(
-            'INSERT INTO USERS (username, password) values (?, ?)',
-            (user.username, user.password)
-        )
-
-        self._connection.commit()
-        return user
+        user = cursor.fetchone()
+        return get_user_by_row(user)
 
     def delete_all(self):
         #poistaa kaikki käyttäjät

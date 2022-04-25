@@ -9,7 +9,6 @@ def drop_tables(connection):
     connection.commit()
 
 def create_tables(connection):
-    # luo tietokantataulut
     cursor = connection.cursor()
     cursor.execute('''
         create table users (
@@ -20,12 +19,10 @@ def create_tables(connection):
     connection.commit()
 
 def initialize_database():
-    # alustaa tietokantataulut
-
     connection = get_database_connection()
-
     drop_tables(connection)
     create_tables(connection)
+
 
 if __name__ == '__main__':
     initialize_database()

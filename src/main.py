@@ -11,6 +11,7 @@ class Main():
         pygame.init()
         self.game = MainRun()
         self.login_window = Tk()
+        self.login_window.title("Login window")
         self.ui = UI(self.login_window)
         
 
