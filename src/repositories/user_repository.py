@@ -11,7 +11,7 @@ class UserRepository:
 
         self._connection = connection
 
-    def create_user(self, user):
+    def create(self, user):
         # tallentaa käyttäjän tietokantaan
 
         cursor = self._connection.cursor()
@@ -53,3 +53,4 @@ class UserRepository:
         self._connection.commit()
 
 user_repository = UserRepository(get_database_connection())
+users = user_repository.find_all()
