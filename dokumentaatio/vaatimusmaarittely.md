@@ -5,7 +5,7 @@ Sovelluksella voi pelata wordle-tyyppistä peliä (TEHTY)
 Wordle on newyorktimes -lehden sanaarvauspeli, jossa pelaajan tulee kuudella vuorolla arvata oikein 5-kirjaiminen 
 englanninkielinen sana. Peli näyttää jokaisen arvauksen jälkeen oikealla paikalla olevat kirjaimet vihreällä ja oikeassa sanassa olevat, mutta arvauksessa väärässä kohdassa olevat kirjaimet keltaisella
 
-## Käyttäjät(TEHTY)
+## Käyttäjät
 Sovelluksella on vain yksi käyttäjärooli
 
 ## Käyttöliittymät
