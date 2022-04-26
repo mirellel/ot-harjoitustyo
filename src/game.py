@@ -1,18 +1,16 @@
 
-from curses import window
 import random
 import sys
 import pygame
 from pygame.locals import *  # pylint: disable=unused-wildcard-import, disable=wildcard-import
 from checkguess import CheckGuess
-from settings import *  # pylint: disable=unused-wildcard-import, disable=wildcard-import
-
+from settings import green, white, font, black, red, window, grey
 pygame.init()
 
 checkguess = CheckGuess()
 
 
-class MainRun(): # pylint: disable=too-many-instance-attributes
+class MainRun():  # pylint: disable=too-many-instance-attributes
     def __init__(self):
         self.time1 = 0
         self.time2 = 0
@@ -30,12 +28,11 @@ class MainRun(): # pylint: disable=too-many-instance-attributes
         for i in range(0, 5):
             for j in range(0, 6):
                 pygame.draw.rect(window, grey, pygame.Rect(
-                60 + (i*80), 50 + (j*80), 50, 50), 2)
+                    60 + (i*80), 50 + (j*80), 50, 50), 2)
 
-
-    def process_events(self): #pylint: disable=too-many-statements
+    def process_events(self):  # pylint: disable=too-many-statements
         spacing = 0
-        for event in pygame.event.get(): # pylint: disable=too-many-nested-blocks
+        for event in pygame.event.get():  # pylint: disable=too-many-nested-blocks
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
@@ -58,10 +55,12 @@ class MainRun(): # pylint: disable=too-many-instance-attributes
                                 for j in range(0, 5):
                                     checkguess.renderlist[j] = font.render(
                                         self.guess[j], True, black)
-                                    pygame.draw.rect(window, checkguess.guesscolourcode[j], pygame.Rect(  # pylint: disable=line-too-long
+                                    pygame.draw.rect(window, checkguess.guesscolourcode[j],
+                                                     pygame.Rect(
                                         60 + spacing, 50 + (self.turns*80), 50, 50))
                                     window.blit(
-                                        checkguess.renderlist[j], (70 + spacing, 50 + (self.turns*80)))  # pylint: disable=line-too-long
+                                        checkguess.renderlist[j], (70 + spacing,
+                                                                   50 + (self.turns*80)))
                                     spacing += 80
                                 self.turns += 1
                                 self.guess = ""
@@ -108,13 +107,12 @@ class MainRun(): # pylint: disable=too-many-instance-attributes
             pygame.draw.rect(window, white, pygame.Rect(50, 10, 600, 40))
             pygame.draw.rect(window, white, pygame.Rect(272, 40, 28, 50))
 
-    def display_frame(self): #pylint: disable=too-many-statements
+    def display_frame(self):
         if self.guess:
             letterspacing = 0
-            for i in range(len(self.guess)): #pylint: disable=consider-using-enumerate
+            for i in range(len(self.guess)):  # pylint: disable=consider-using-enumerate
                 word_surface = font.render(self.guess[i], True, black)
                 window.blit(word_surface, (180+letterspacing, 530))
                 letterspacing += 30
         if self.turns == 6 and not self.win:
             self.lost = True
-            

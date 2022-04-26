@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar, constants
 from services.game_service import game_service, UsernameExistsError
 
+
 class CreateUserView:
     def __init__(self, root, handle_create_user, handle_show_login_view):
         self._root = root
@@ -19,6 +20,7 @@ class CreateUserView:
 
     def destroy(self):
         self._frame.destroy()
+
     def _create_user_handler(self):
         username = self._username_entry.get()
         password = self._password_entry.get()

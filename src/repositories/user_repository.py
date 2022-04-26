@@ -1,8 +1,10 @@
 from entities.user import User
 from database_connection import get_database_connection
 
+
 def get_user_by_row(row):
     return User(row['username'], row['password']) if row else None
+
 
 class UserRepository:
     # käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka
@@ -44,13 +46,14 @@ class UserRepository:
         return get_user_by_row(user)
 
     def delete_all(self):
-        #poistaa kaikki käyttäjät
+        # poistaa kaikki käyttäjät
 
         cursor = self._connection.cursor()
 
         cursor.execute('DELETE FROM USERS')
 
         self._connection.commit()
+
 
 user_repository = UserRepository(get_database_connection())
 users = user_repository.find_all()

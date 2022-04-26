@@ -1,19 +1,19 @@
 import sys
+from tkinter import Tk
 import pygame
 from game import MainRun
 from settings import clock, window, white, pink, start_game, \
-     font, largefont, victory, play_again, defeat
-from ui import login_view
+    font, largefont, victory, play_again, defeat
 from ui.ui import UI
-from tkinter import Tk
+
+
 class Main():
     def __init__(self):
         pygame.init()
         self.game = MainRun()
         self.login_window = Tk()
         self.login_window.title("Login window")
-        self.ui = UI(self.login_window)
-        
+        self.user_interface = UI(self.login_window)
 
     def run_game(self):
         done = False
@@ -33,7 +33,7 @@ class Main():
         pygame.display.set_caption("Word.py")
         pygame.mouse.set_visible(True)
         window.fill(pink)
-        while True: # pylint: disable=too-many-nested-blocks
+        while True:  # pylint: disable=too-many-nested-blocks
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -43,7 +43,7 @@ class Main():
                     if 50 <= mouse[0] <= 450 and 250 <= mouse[1] <= 350:
                         self.run_game()
                     if 50 <= mouse[0] <= 450 and 100 <= mouse[1] <= 200:
-                        self.ui.start()
+                        self.user_interface.start()
                         self.login_window.mainloop()
             pygame.draw.rect(window, white, pygame.Rect(50, 100, 400, 100))
             pygame.draw.rect(window, white, pygame.Rect(50, 250, 400, 100))
@@ -55,7 +55,7 @@ class Main():
             pygame.display.update()
 
     def win_menu(self):
-        while True: # pylint: disable=too-many-nested-blocks
+        while True:  # pylint: disable=too-many-nested-blocks
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -84,7 +84,7 @@ class Main():
             pygame.display.update()
 
     def lose_menu(self):
-        while True: # pylint: disable=too-many-nested-blocks
+        while True:  # pylint: disable=too-many-nested-blocks
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

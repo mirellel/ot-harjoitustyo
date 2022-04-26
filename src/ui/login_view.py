@@ -88,4 +88,3 @@ class LoginView:
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self._hide_error()
-

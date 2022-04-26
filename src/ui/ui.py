@@ -15,6 +15,7 @@ class UI:
             self._current_view.destroy()
 
         self._current_view = None
+
     def _hande_login(self):
         self._show_login_view()
 
@@ -26,7 +27,6 @@ class UI:
 
         self._current_view = LoginView(
             self._root, self._handle_create_user, self._show_create_user_view)
-        
 
         self._current_view.pack()
 

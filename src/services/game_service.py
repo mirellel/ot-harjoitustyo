@@ -3,11 +3,14 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
+
 class InvalidCredentialsError(Exception):
     pass
 
+
 class UsernameExistsError(Exception):
     pass
+
 
 class GameService:
     def __init__(self, user_repository=default_user_repository):
@@ -15,7 +18,7 @@ class GameService:
         self._user_repository = user_repository
 
     def login(self, username, password):
-        #kirjaa käyttäjän sisään
+        # kirjaa käyttäjän sisään
 
         user = self._user_repository.find_by_username(username)
 
@@ -27,28 +30,28 @@ class GameService:
         return user
 
     def get_current_user(self):
-        #palauttaa kirjautuneen käyttäjän
+        # palauttaa kirjautuneen käyttäjän
 
         return self._user
 
     def get_users(self):
-        #palauttaa kaikki käyttäjät
+        # palauttaa kaikki käyttäjät
 
         return self._user_repository.find_all()
 
     def logout(self):
-        #kirjaa nykyisen käyttäjän ulos
+        # kirjaa nykyisen käyttäjän ulos
 
         self._user = None
 
     def create_user(self, username, password, login=True):
-        #luo uuden käyttäjän ja tarvittaessa kirjaa sen sisään
+        # luo uuden käyttäjän ja tarvittaessa kirjaa sen sisään
 
         existing_user = self._user_repository.find_by_username(username)
 
         if existing_user:
             raise UsernameExistsError(f'Username {username} already exists')
-        
+
         user = self._user_repository.create(User(username, password))
 
         if login:
@@ -56,5 +59,5 @@ class GameService:
 
         return user
 
-game_service = GameService()
 
+game_service = GameService()
