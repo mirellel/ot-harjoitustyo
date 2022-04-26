@@ -1,13 +1,11 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-#### (minun piti ensin tehdä miinaharava-peli, mutta se osoittautui hieman liian vaikeaksi)
-
 Sovelluksella voi pelata wordle-tyyppistä peliä (TEHTY)
 Wordle on newyorktimes -lehden sanaarvauspeli, jossa pelaajan tulee kuudella vuorolla arvata oikein 5-kirjaiminen 
 englanninkielinen sana. Peli näyttää jokaisen arvauksen jälkeen oikealla paikalla olevat kirjaimet vihreällä ja oikeassa sanassa olevat, mutta arvauksessa väärässä kohdassa olevat kirjaimet keltaisella
 
-## Käyttäjät
+## Käyttäjät(TEHTY)
 Sovelluksella on vain yksi käyttäjärooli
 
 ## Käyttöliittymät
@@ -17,8 +15,8 @@ on oma luomisnäkymä. Onnistuneen kirjautumisen jälkeen avautuu valikko, josta
 ## Toiminnallisuudet
 Pelin pelaaminen (TEHTY)
 Game menu (ALUSTAVA TEHTY)
-Sovellukseen voi luoda käyttäjän
-Sovellukseen voi kirjautua
+Sovellukseen voi luoda käyttäjän (TEHTY)
+Sovellukseen voi kirjautua (TEHTY)
 Käyttäjä näkee omat pelitilastonsa
 
 ## Ennen kirjautumista
