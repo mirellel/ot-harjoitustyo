@@ -19,8 +19,9 @@ class Main():
         done = False
         self.game = MainRun()
         while not done:
-            self.game.run_logic()
             self.game.process_events()
+            self.game.not_in_list()
+            self.game.too_short()
             self.game.display_frame()
             clock.tick(30)
             if self.game.lost is True:
@@ -33,7 +34,7 @@ class Main():
         pygame.display.set_caption("Word.py")
         pygame.mouse.set_visible(True)
         window.fill(pink)
-        while True:  # pylint: disable=too-many-nested-blocks
+        while True:
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -55,7 +56,7 @@ class Main():
             pygame.display.update()
 
     def win_menu(self):
-        while True:  # pylint: disable=too-many-nested-blocks
+        while True:
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -84,7 +85,7 @@ class Main():
             pygame.display.update()
 
     def lose_menu(self):
-        while True:  # pylint: disable=too-many-nested-blocks
+        while True:
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

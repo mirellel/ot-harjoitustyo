@@ -2,7 +2,6 @@
 import random
 import sys
 import pygame
-from pygame.locals import *  # pylint: disable=unused-wildcard-import, disable=wildcard-import
 from checkguess import CheckGuess
 from settings import green, white, font, black, red, window, grey
 pygame.init()
@@ -10,7 +9,7 @@ pygame.init()
 checkguess = CheckGuess()
 
 
-class MainRun():  # pylint: disable=too-many-instance-attributes
+class MainRun():
     def __init__(self):
         self.time1 = 0
         self.time2 = 0
@@ -30,9 +29,28 @@ class MainRun():  # pylint: disable=too-many-instance-attributes
                 pygame.draw.rect(window, grey, pygame.Rect(
                     60 + (i*80), 50 + (j*80), 50, 50), 2)
 
-    def process_events(self):  # pylint: disable=too-many-statements
+    def check_win(self):
+        if checkguess.check(self.word, self.guess) == self.win_list:
+            self.win = True
+
+    def check_guess(self):
         spacing = 0
-        for event in pygame.event.get():  # pylint: disable=too-many-nested-blocks
+        for j in range(0, 5):
+            checkguess.renderlist[j] = font.render(
+                self.guess[j], True, black)
+            pygame.draw.rect(window, checkguess.guesscolourcode[j],
+                             pygame.Rect(
+                60 + spacing, 50 + (self.turns*80), 50, 50))
+            window.blit(
+                checkguess.renderlist[j], (70 + spacing,
+                                           50 + (self.turns*80)))
+            spacing += 80
+        self.turns += 1
+        self.guess = ""
+        window.fill(white, (0, 500, 500, 200))
+
+    def process_events(self):
+        for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
@@ -42,7 +60,7 @@ class MainRun():  # pylint: disable=too-many-instance-attributes
                     if event.key == pygame.K_BACKSPACE:
                         if self.guess:
                             self.guess = self.guess[:-1]
-                    # arvauksen tekeminen
+                    # arvauksen tekeminen enteriä painamalla
                     elif event.key == pygame.K_RETURN:
                         # hyväksytään vain viisikirjaiminen arvaus
                         if len(self.guess) == 5:
@@ -50,21 +68,8 @@ class MainRun():  # pylint: disable=too-many-instance-attributes
                             # tarkastetaan onko arvaus kelpaava sana
                             if self.guess.lower() in self.wordlist:
                                 # kutsutaan checkguess luokkaa tarkastamaan arvaus
-                                if checkguess.check(self.word, self.guess) == self.win_list:
-                                    self.win = True
-                                for j in range(0, 5):
-                                    checkguess.renderlist[j] = font.render(
-                                        self.guess[j], True, black)
-                                    pygame.draw.rect(window, checkguess.guesscolourcode[j],
-                                                     pygame.Rect(
-                                        60 + spacing, 50 + (self.turns*80), 50, 50))
-                                    window.blit(
-                                        checkguess.renderlist[j], (70 + spacing,
-                                                                   50 + (self.turns*80)))
-                                    spacing += 80
-                                self.turns += 1
-                                self.guess = ""
-                                window.fill(white, (0, 500, 500, 200))
+                                self.check_win()
+                                self.check_guess()
                             else:
                                 self.incorrect_word = True  # merkitsee kelpaamattoman sanan
                                 self.time1 = 0
@@ -79,14 +84,20 @@ class MainRun():  # pylint: disable=too-many-instance-attributes
                                 self.guess += event.unicode.upper()
                     window.fill(white, (0, 500, 500, 200))
 
-    def run_logic(self):
+    def not_in_list(self):
         if self.incorrect_word is True:
             self.time2 = 0
             self.wrong_num_of_letters = False
             text_surface = font.render("Not in word list!", True, red)
             window.blit(text_surface, (105, 3))
             self.time1 += 1
+        if self.time1 == 60:
+            self.incorrect_word = False
+            self.time1 = 0
+            self.guess = ""
+            pygame.draw.rect(window, white, pygame.Rect(50, 10, 600, 40))
 
+    def too_short(self):
         if self.wrong_num_of_letters is True:
             self.incorrect_word = False
             self.time1 = 0
@@ -94,18 +105,12 @@ class MainRun():  # pylint: disable=too-many-instance-attributes
             window.blit(text_surface, (105, 0))
             self.time2 += 1
 
-        if self.time1 == 60:
-            self.incorrect_word = False
-            self.time1 = 0
-            self.guess = ""
-            pygame.draw.rect(window, white, pygame.Rect(50, 10, 600, 40))
-
         if self.time2 == 60:
             self.wrong_num_of_letters = False
             self.time2 = 0
             self.guess = ""
-            pygame.draw.rect(window, white, pygame.Rect(50, 10, 600, 40))
-            pygame.draw.rect(window, white, pygame.Rect(272, 40, 28, 50))
+            pygame.draw.rect(window, white, pygame.Rect(50, 0, 600, 40))
+            pygame.draw.rect(window, white, pygame.Rect(265, 35, 28, 10))
 
     def display_frame(self):
         if self.guess:
