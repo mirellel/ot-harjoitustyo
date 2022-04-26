@@ -8,9 +8,9 @@
 |11.4.  |4,5h | parantelin pelin luokkia ja testejä, tein koodin laatutarkastuksen|
 |12.4.  |4h   | game menu luotu, poistumisvalikko pelin jälkeen|
 |24.4.  |4,5h  | loin Main-luokan ja menut voitolle ja häviölle|
+|25.4.  |4h    | kirjautumismahdollisuuden luonti |
 |       |      | |
 |       |      | |
 |       |      | |
 |       |      | |
-|       |      | |
-|   yht    |   28,5h   | | 
+|   yht    |   32,5h   | | 
