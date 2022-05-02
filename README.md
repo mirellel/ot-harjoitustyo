@@ -18,8 +18,38 @@ Sovelluksessa käyttäjä voi pelata Wordle-kaltaista sanaarvauspeliä (suomeksi
 
 ### Asennus
 1. Riippuvuudet tulee asentaa komennolla:
+```bash
 poetry install
+```
 2. Vaadittavat alustustoimenpiteet suoritetaan komennolla
+```bash
 poetry run invoke build
-3. Sovellus käynnistetään komennossa
+```
+3. Sovellus käynnistetään komennolla
+```bash
 poetry run invoke start
+```
+### Ohjelman suorittaminen
+Ohjelman voi suorittaa komennolla:
+```bash
+poetry run invoke start
+```
+### Testaus
+Testit voi suorittaa komennolla:
+```bash
+poetry run invoke test
+```
+### Testikattavuus
+Testikattavuusraportin voi generoida komennolla:
+```bash
+poetry run invoke coverage-report
+```
+Raportti löytyy _htmlcov_-hakemistosta painamalla index.html-tiedostoa.
+
+### Pylint
+
+Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
