@@ -1,21 +1,13 @@
 import sys
-from tkinter import Tk
 import pygame
 from game import MainRun
 from settings import clock, window, white, pink, start_game, \
     font, largefont, victory, play_again, defeat
-from ui.ui import UI
-from services.game_service import GameService
-
 
 class Main():
     def __init__(self):
         pygame.init()
         self.game = MainRun()
-        self.login_window = Tk()
-        self.login_window.title("Login window")
-        self.user_interface = UI(self.login_window)
-        self.game_service = GameService()
 
     def run_game(self):
         done = False
@@ -45,20 +37,11 @@ class Main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if 50 <= mouse[0] <= 450 and 250 <= mouse[1] <= 350:
                         self.run_game()
-                    if 50 <= mouse[0] <= 450 and 100 <= mouse[1] <= 200:
-                        self.user_interface.start()
-                        self.login_window.mainloop()
-            pygame.draw.rect(window, white, pygame.Rect(50, 100, 400, 100))
             pygame.draw.rect(window, white, pygame.Rect(50, 250, 400, 100))
             if 50 <= mouse[0] <= 450 and 250 <= mouse[1] <= 350:
                 pygame.draw.rect(window, (242, 242, 242),
                                  pygame.Rect(50, 250, 400, 100))
-            if 50 <= mouse[0] <= 450 and 100 <= mouse[1] <= 200:
-                pygame.draw.rect(window, (242, 242, 242),
-                                 pygame.Rect(50, 250, 400, 100))
             window.blit(start_game, (120, 270))
-            if self.game_service.login_succesfull is False:
-                window.blit(font.render("Log In", True, pink), (100, 115))
             pygame.display.update()
 
     def win_menu(self):
@@ -118,7 +101,3 @@ class Main():
                                  pygame.Rect(50, 400, 400, 100))
             window.blit(font.render("Main menu", True, pink), (155, 420))
             pygame.display.update()
-    
-main = Main()
-
-main.start_menu()
