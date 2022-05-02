@@ -4,6 +4,7 @@ from game import MainRun
 from settings import clock, window, white, pink, start_game, \
     font, largefont, victory, play_again, defeat
 
+
 class Main():
     def __init__(self):
         pygame.init()

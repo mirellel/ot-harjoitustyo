@@ -19,7 +19,7 @@ class MainRun():
         self.lost = False
         self.incorrect_word = False
         self.wrong_num_of_letters = False
-        with open("wordlist.txt", encoding="utf-8") as file:
+        with open("src/wordlist.txt", encoding="utf-8") as file:
             self.wordlist = [word.replace("\n", "") for word in file]
         self.word = self.wordlist[random.randint(0, 2000)].upper()
         self.win_list = [green, green, green, green, green]

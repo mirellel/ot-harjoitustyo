@@ -2,6 +2,7 @@ from tkinter import ttk, constants
 from services.game_service import game_service
 from ui.game_ui import Main
 
+
 class StatsView:
     def __init__(self, root, handle_logout):
         self._root = root
@@ -45,7 +46,7 @@ class StatsView:
 
     def _handle_run_game(self):
         self.run_game.start_menu()
-            
+
     def _initialize_footer(self):
 
         create_start_game_button = ttk.Button(
