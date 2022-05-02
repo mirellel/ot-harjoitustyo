@@ -3,6 +3,7 @@ from services.game_service import game_service, UsernameExistsError
 
 
 class CreateUserView:
+    '''Luokka joka vastaa create user käyttöliittymän luonnista'''
     def __init__(self, root, handle_create_user, handle_show_login_view):
         self._root = root
         self._handle_create_user = handle_create_user

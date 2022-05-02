@@ -3,30 +3,27 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
-
 class InvalidCredentialsError(Exception):
     pass
 
-
 class UsernameExistsError(Exception):
     pass
-
 
 class GameService:
     def __init__(self, user_repository=default_user_repository):
         self._user = None
         self._user_repository = user_repository
+        self.login_succesfull = False
 
     def login(self, username, password):
         # kirjaa käyttäjän sisään
-
+        
         user = self._user_repository.find_by_username(username)
 
         if not user or user.password != password:
             raise InvalidCredentialsError('Invalid username or password')
 
         self._user = user
-
         return user
 
     def get_current_user(self):

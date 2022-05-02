@@ -3,6 +3,7 @@ from services.game_service import game_service, InvalidCredentialsError
 
 
 class LoginView:
+    '''Luokka joka vastaa login käyttöliittymän luonnista'''
     def __init__(self, root, handle_login, handle_show_create_user_view):
         self._root = root
         self._handle_login = handle_login

@@ -1,4 +1,5 @@
 from ui.login_view import LoginView
+from ui.stats_view import StatsView
 from ui.create_user_view import CreateUserView
 
 
@@ -26,9 +27,14 @@ class UI:
         self._hide_current_view()
 
         self._current_view = LoginView(
-            self._root, self._handle_create_user, self._show_create_user_view)
+            self._root, self._show_stats_view, self._show_create_user_view)
 
         self._current_view.pack()
+
+    def _show_stats_view(self):
+        self._hide_current_view()
+
+        self._current_view = StatsView(self._root, self._show_login_view)
 
         self._current_view.pack()
 
@@ -37,7 +43,7 @@ class UI:
 
         self._current_view = CreateUserView(
             self._root,
-            self._handle_create_user,
+            self._show_stats_view,
             self._show_login_view
         )
 
