@@ -2,7 +2,7 @@
 import random
 import sys
 import pygame
-from checkguess import CheckGuess
+from services.checkguess import CheckGuess
 from settings import green, white, font, black, red, window, grey
 pygame.init()
 

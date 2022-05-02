@@ -1,9 +1,8 @@
 import sys
 import pygame
-from game import MainRun
+from ui.game import MainRun
 from settings import clock, window, white, pink, start_game, \
     font, largefont, victory, play_again, defeat
-
 
 class Main():
     def __init__(self):
@@ -102,3 +101,4 @@ class Main():
                                  pygame.Rect(50, 400, 400, 100))
             window.blit(font.render("Main menu", True, pink), (155, 420))
             pygame.display.update()
+    
