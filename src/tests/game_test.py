@@ -1,5 +1,5 @@
 import unittest
-from checkguess import CheckGuess
+from services.checkguess import CheckGuess
 checkGuess = CheckGuess()
 
 

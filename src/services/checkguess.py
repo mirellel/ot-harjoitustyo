@@ -2,21 +2,27 @@ from settings import *  # pylint: disable=unused-wildcard-import, disable=wildca
 
 
 class CheckGuess():
+    '''Pelilogiikasta vastaavaluokka'''
     def __init__(self):
+        '''luokan konstruktori
+        '''
         self.renderlist = ["", "", "", "", ""]
         self.guesscolourcode = [grey, grey, grey, grey, grey]
 
-    def check(self, word, userquess):
-        # tarkastaa, onko arvauksessa oikeita kirjaimia
+    def check(self, word, userguess):
+        """Luo uuden tehtävän.
+        Args:
+            word: Merkkijonoarvo, joka kuvaa voittosanaa.
+            userguess: Merkkijonoarvo, joka kuvaa käyttäjän syöttämää arvausta
+        Returns:
+            Käyttäjän arvauksen värikoodin listamuodossa.
+        """
         for i in range(0, 5):
-            # oikea kirjain väärällä paikalla merkitään keltaisella
-            if userquess[i] not in word:
+            if userguess[i] not in word:
                 self.guesscolourcode[i] = grey
-            if userquess[i] in word:
+            if userguess[i] in word:
                 self.guesscolourcode[i] = yellow
-            # oikea kirjain oikealla paikalla merkitään vihreällä
-            if userquess[i] == word[i]:
+            if userguess[i] == word[i]:
                 self.guesscolourcode[i] = green
-        list(userquess)
-        # jos kaikki vihreää, voitto
+        list(userguess)
         return self.guesscolourcode
