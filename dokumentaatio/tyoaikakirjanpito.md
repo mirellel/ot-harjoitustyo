@@ -10,7 +10,7 @@
 |24.4.  |4,5h  | loin Main-luokan ja menut voitolle ja häviölle|
 |25.4.  |4h    | kirjautumismahdollisuuden luonti |
 |2.5.   |4h    | kirjautumisen parantelua, vertaisarviointi|
-|3.5.   |      | |
+|3.5.   |2h    | docsting-dokumentointi, startmenun quit nappi |
 |       |      | |
 |       |      | |
 |   yht    |   36,5h   | | 
