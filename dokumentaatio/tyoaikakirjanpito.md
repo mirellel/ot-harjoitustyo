@@ -13,4 +13,4 @@
 |3.5.   |2h    | docsting-dokumentointi, startmenun quit nappi |
 |       |      | |
 |       |      | |
-|   yht    |   36,5h   | | 
+|   yht    |   38,5h   | | 
