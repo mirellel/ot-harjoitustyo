@@ -19,4 +19,6 @@
 - peliin voi luoda käyttäjän ja kirjautua sisään
    - sisäänkirjautiminen ei vielä tee mitään
   
-
+## Viikko 6
+- Sovellus avautuu kirjautumisnäkymään
+- kirjauduttua sisään voi pelata peliä
