@@ -5,11 +5,13 @@ from settings import clock, window, white, pink, start_game, \
     font, largefont, victory, play_again, defeat, quit_game
 
 class Main():
+    '''Luokka joka vastaa pelin menuista ja pyörittämisestä'''
     def __init__(self):
         pygame.init()
         self.game = MainRun()
 
     def run_game(self):
+        '''pyörittää peliä MainRun() luokan avulla'''
         done = False
         self.game = MainRun()
         while not done:
@@ -25,6 +27,7 @@ class Main():
             pygame.display.update()
 
     def start_menu(self):
+        '''aloitusmenu, joka aukeaa ensimmäisenä'''
         pygame.display.set_caption("Word.py")
         pygame.mouse.set_visible(True)
         window.fill(pink)
@@ -54,6 +57,7 @@ class Main():
             pygame.display.update()
 
     def win_menu(self):
+        '''voittomenu joka aukeaa, jos pelaaja voittaa pelin'''
         while True:
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
@@ -83,6 +87,7 @@ class Main():
             pygame.display.update()
 
     def lose_menu(self):
+        '''menu joka aukeaa, jos pelaaja häviää pelin'''
         while True:
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
