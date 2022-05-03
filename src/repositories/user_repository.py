@@ -7,15 +7,23 @@ def get_user_by_row(row):
 
 
 class UserRepository:
-    # käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka
+    """Käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka.
+    """
 
     def __init__(self, connection):
-
+        """Luokan konstruktori.
+        Args:
+            connection: Tietokantayhteyden Connection-olio
+        """
         self._connection = connection
 
     def create(self, user):
-        # tallentaa käyttäjän tietokantaan
-
+        """Tallentaa käyttäjän tietokantaan.
+        Args:
+            todo: Tallennettava käyttäjä User-oliona.
+        Returns:
+            Tallennettu käyttjä User-oliona.
+        """
         cursor = self._connection.cursor()
         cursor.execute(
             "insert into users (username, password) values (?, ?)",
@@ -26,7 +34,10 @@ class UserRepository:
         return user
 
     def find_all(self):
-        # palauttaa kaikki käyttäjät
+        """Palauttaa kaikki käyttäjät.
+        Returns:
+            Palauttaa listan User-olioita.
+        """
 
         cursor = self._connection.cursor()
         cursor.execute('select * from users')
@@ -36,7 +47,13 @@ class UserRepository:
         return list(map(get_user_by_row, rows))
 
     def find_by_username(self, username):
-        # palauttaa käyttäjän käyttäjätunnuksen perusteella
+        """Palauttaa käyttäjän käyttäjätunnuksen perusteella.
+        Args:
+            username: Käyttäjätunnus, jonka käyttäjä palautetaan.
+        Returns:
+            Palauttaa User-olion, jos käyttäjätunnuksen omaava käyttäjä on tietokannassa.
+            Muussa tapauksessa None.
+        """
         cursor = self._connection.cursor()
         cursor.execute(
             "select * from users where username = ?",
@@ -46,8 +63,8 @@ class UserRepository:
         return get_user_by_row(user)
 
     def delete_all(self):
-        # poistaa kaikki käyttäjät
-
+        """Poistaa kaikki käyttäjät.
+        """
         cursor = self._connection.cursor()
 
         cursor.execute('DELETE FROM USERS')

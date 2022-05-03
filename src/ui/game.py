@@ -10,6 +10,7 @@ checkguess = CheckGuess()
 
 
 class MainRun():
+    # luokka joka vastaa pelin toiminnasta ja renderöinnistä näytölle
     def __init__(self):
         self.time1 = 0
         self.time2 = 0
@@ -30,10 +31,12 @@ class MainRun():
                     60 + (i*80), 50 + (j*80), 50, 50), 2)
 
     def check_win(self):
+        # tarkastaa voiton
         if checkguess.check(self.word, self.guess) == self.win_list:
             self.win = True
 
     def check_guess(self):
+        # tarkastaa arvauksen
         spacing = 0
         for j in range(0, 5):
             checkguess.renderlist[j] = font.render(
@@ -85,6 +88,7 @@ class MainRun():
                     window.fill(white, (0, 500, 500, 200))
 
     def not_in_list(self):
+        # virheimoitus epäkelpoisesta sanasta
         if self.incorrect_word is True:
             self.time2 = 0
             self.wrong_num_of_letters = False
@@ -98,6 +102,7 @@ class MainRun():
             pygame.draw.rect(window, white, pygame.Rect(50, 10, 600, 40))
 
     def too_short(self):
+        # virheimloitus liian lyhyestä sanasta
         if self.wrong_num_of_letters is True:
             self.incorrect_word = False
             self.time1 = 0
@@ -112,12 +117,14 @@ class MainRun():
             pygame.draw.rect(window, white, pygame.Rect(50, 0, 600, 40))
             pygame.draw.rect(window, white, pygame.Rect(265, 35, 28, 10))
 
-    def display_frame(self):
+    def display_guess(self):
+        # piirtää arvauksen ruutuihin 
         if self.guess:
             letterspacing = 0
             for i in range(len(self.guess)):  # pylint: disable=consider-using-enumerate
                 word_surface = font.render(self.guess[i], True, black)
                 window.blit(word_surface, (180+letterspacing, 530))
                 letterspacing += 30
+        # merkitsee voiton
         if self.turns == 6 and not self.win:
             self.lost = True

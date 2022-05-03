@@ -4,7 +4,15 @@ from ui.game_ui import Main
 
 
 class StatsView:
+    '''pelitilastojen näyttämisestä vastaava luokka'''
     def __init__(self, root, handle_logout):
+        """Luokan konstruktori. Luo uuden tehtävälistausnäkymän.
+        Args:
+            root:
+                TKinter-elementti, jonka sisään näkymä alustetaan.
+            handle_log_out:
+                kutsuttava-arvo, joka kirjaa käyttäjän ulos
+        """
         self._root = root
         self._handle_logout = handle_logout
         self._user = game_service.get_current_user()
@@ -13,12 +21,15 @@ class StatsView:
         self._initialize()
 
     def pack(self):
+        '''näyttää näkymän'''
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        '''tuhoaa näkymän'''
         self._frame.destroy()
 
     def _logout_handler(self):
+        '''kirjaa käyttäjän ulos'''
         game_service.logout()
         self._handle_logout()
 
@@ -45,6 +56,7 @@ class StatsView:
         )
 
     def _handle_run_game(self):
+        '''avaa pelinäkymän'''
         self.run_game.start_menu()
 
     def _initialize_footer(self):
