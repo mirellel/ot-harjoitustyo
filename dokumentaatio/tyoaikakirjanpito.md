@@ -9,8 +9,8 @@
 |12.4.  |4h   | game menu luotu, poistumisvalikko pelin jälkeen|
 |24.4.  |4,5h  | loin Main-luokan ja menut voitolle ja häviölle|
 |25.4.  |4h    | kirjautumismahdollisuuden luonti |
+|2.5.   |4h    | kirjautumisen parantelua, vertaisarviointi|
+|3.5.   |      | |
 |       |      | |
 |       |      | |
-|       |      | |
-|       |      | |
-|   yht    |   32,5h   | | 
+|   yht    |   36,5h   | | 
