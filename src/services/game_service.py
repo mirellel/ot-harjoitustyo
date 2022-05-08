@@ -66,7 +66,7 @@ class GameService:
 
         self._user = None
 
-    def create_user(self, username, password, login=True):
+    def create(self, username, password, login=True):
         """Luo uuden käyttäjän ja tarvittaessa kirjaa sen sisään.
         Args:
             username: Merkkijonoarvo, joka kuvastaa käyttäjän käyttäjätunnusta.
