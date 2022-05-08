@@ -1,4 +1,4 @@
 [run]
 source = src
-omit = src/**/__init__.py,src/tests/**,src/game_menu.py,src/game.py, src/build.py, src/config.py, src/database_connection.py, src/entities/user.py, src/initialize_database.py, src/main.py, src/services/game_service.py, src/start.py, src/ui/**, src/index.py
+omit = src/**/__init__.py,src/tests/**,src/game_menu.py,src/game.py, src/build.py, src/config.py, src/database_connection.py, src/entities/user.py, src/initialize_database.py, src/main.py, src/start.py, src/ui/**, src/index.py
 
