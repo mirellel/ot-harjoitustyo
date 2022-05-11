@@ -2,8 +2,8 @@ import pygame
 pygame.init()
 
 # kaksi fonttikokoa
-font = pygame.font.SysFont("Arial", 40)
-largefont = pygame.font.SysFont("Arial", 60)
+font = pygame.font.SysFont("Arial", 40, 'bold')
+largefont = pygame.font.SysFont("Arial", 60, 'bold')
 
 clock = pygame.time.Clock()
 window = pygame.display.set_mode((500, 600))
@@ -17,8 +17,8 @@ grey = (127, 128, 122)
 pink = (237, 140, 195)
 red = (224, 13, 35)
 
-defeat = largefont.render("You lost!", True, pink)
-victory = largefont.render("You won!", True, pink)
-play_again = largefont.render("Replay", True, pink)
-quit_game = font.render("Quit", True, pink)
-start_game = font.render("Start game", True, pink)
+defeat = largefont.render("YOU LOST!", True, pink)
+victory = largefont.render("YOU WON!", True, pink)
+play_again = largefont.render("REPLAY", True, pink)
+quit_game = font.render("QUIT", True, pink)
+start_game = font.render("START GAME", True, pink)

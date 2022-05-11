@@ -1,6 +1,8 @@
 import unittest
 from entities.user import User
-from services.game_service import (GameService, InvalidCredentialsError, UsernameExistsError)
+from services.game_service import (
+    GameService, InvalidCredentialsError, UsernameExistsError)
+
 
 class FakeUserRepository:
     def __init__(self, users=None):
@@ -8,7 +10,7 @@ class FakeUserRepository:
 
     def find_all(self):
         return self.users
-    
+
     def find_by_username(self, username):
         matching_users = filter(
             lambda user: user.username == username,
@@ -34,7 +36,6 @@ class TestGameService(unittest.TestCase):
 
         self.user_miiris = User('miiris', 'fili123')
 
-
     def login_user(self, user):
         self.service.create(user.username, user.password)
 
@@ -52,9 +53,8 @@ class TestGameService(unittest.TestCase):
         self.assertEqual(user.username, self.user_miiris.username)
 
     def test_login_with_invalid_credentials(self):
-        self.assertRaises(InvalidCredentialsError, 
-                            lambda: self.service.login("test", "invalid"))
-
+        self.assertRaises(InvalidCredentialsError,
+                          lambda: self.service.login("test", "invalid"))
 
     def test_create_user_unsuccessfully(self):
         username = self.user_miiris.username
@@ -62,9 +62,8 @@ class TestGameService(unittest.TestCase):
         self.service.create(username, 'invalid')
 
         self.assertRaises(UsernameExistsError,
-                        lambda: self.service.create(username, "something"))
+                          lambda: self.service.create(username, "something"))
 
-    
     def test_current_user(self):
         self.login_user(self.user_miiris)
 

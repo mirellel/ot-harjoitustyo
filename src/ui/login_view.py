@@ -1,5 +1,6 @@
 from tkinter import ttk, StringVar, constants
 from services.game_service import game_service, InvalidCredentialsError
+from ui.game_ui import Main
 
 
 class LoginView:
@@ -14,6 +15,7 @@ class LoginView:
         self._password_entry = None
         self._error_variable = None
         self._error_label = None
+        self._run_game = Main()
 
         self._initialize()
 
@@ -58,10 +60,15 @@ class LoginView:
         '''luo salasanan syöttökentän'''
         password_label = ttk.Label(master=self._frame, text='Password')
 
-        self._password_entry = ttk.Entry(master=self._frame)
+        self._password_entry = ttk.Entry(master=self._frame, show='*')
 
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
+
+    def _handle_run_game(self):
+        '''avaa pelinäkymän'''
+        self._frame.destroy()
+        self._run_game.start_menu()
 
     def _initialize(self):
         '''luo login näkymän ja napit'''
@@ -83,7 +90,7 @@ class LoginView:
         login_button = ttk.Button(
             master=self._frame,
             text='Login',
-            command=self._login_handler
+            command=self._handle_run_game
         )
 
         create_user_button = ttk.Button(

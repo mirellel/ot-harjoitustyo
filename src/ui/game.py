@@ -4,7 +4,6 @@ import sys
 import pygame
 from services.checkguess import CheckGuess
 from settings import green, white, font, black, red, window, grey
-pygame.init()
 
 checkguess = CheckGuess()
 
@@ -12,6 +11,7 @@ checkguess = CheckGuess()
 class MainRun():
     # luokka joka vastaa pelin toiminnasta ja renderöinnistä näytölle
     def __init__(self):
+        pygame.init()
         self.time1 = 0
         self.time2 = 0
         self.turns = 0
@@ -118,7 +118,7 @@ class MainRun():
             pygame.draw.rect(window, white, pygame.Rect(265, 35, 28, 10))
 
     def display_guess(self):
-        # piirtää arvauksen ruutuihin 
+        # piirtää arvauksen ruutuihin
         if self.guess:
             letterspacing = 0
             for i in range(len(self.guess)):  # pylint: disable=consider-using-enumerate

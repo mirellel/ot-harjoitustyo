@@ -3,6 +3,7 @@ from settings import *  # pylint: disable=unused-wildcard-import, disable=wildca
 
 class CheckGuess():
     '''Pelilogiikasta vastaavaluokka'''
+
     def __init__(self):
         '''luokan konstruktori
         '''

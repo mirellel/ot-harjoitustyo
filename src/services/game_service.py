@@ -14,6 +14,7 @@ class UsernameExistsError(Exception):
 
 class GameService:
     """Sovelluslogiikasta vastaa luokka."""
+
     def __init__(self, user_repository=default_user_repository):
         """Luokan konstruktori. Luo uuden sovelluslogiikasta vastaavan palvelun.
         Args:

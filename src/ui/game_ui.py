@@ -4,15 +4,17 @@ from ui.game import MainRun
 from settings import clock, window, white, pink, start_game, \
     font, largefont, victory, play_again, defeat, quit_game
 
+
 class Main():
     '''Luokka joka vastaa pelin menuista ja pyörittämisestä'''
+
     def __init__(self):
         '''luokan konstruktori'''
-        pygame.init()
         self.game = MainRun()
 
     def run_game(self):
         '''pyörittää peliä MainRun() luokan avulla'''
+        pygame.init()
         done = False
         self.game = MainRun()
         while not done:
@@ -44,12 +46,12 @@ class Main():
                     if 50 <= mouse[0] <= 450 and 300 <= mouse[1] <= 400:
                         pygame.quit()
                         sys.exit()
-                    
+
             pygame.draw.rect(window, white, pygame.Rect(50, 150, 400, 100))
             if 50 <= mouse[0] <= 450 and 150 <= mouse[1] <= 250:
                 pygame.draw.rect(window, (242, 242, 242),
                                  pygame.Rect(50, 150, 400, 100))
-            window.blit(start_game, (180, 170))
+            window.blit(start_game, (110, 170))
             pygame.draw.rect(window, white, pygame.Rect(50, 300, 400, 100))
             if 50 <= mouse[0] <= 450 and 300 <= mouse[1] <= 400:
                 pygame.draw.rect(window, (242, 242, 242),
@@ -116,4 +118,3 @@ class Main():
                                  pygame.Rect(50, 400, 400, 100))
             window.blit(font.render("Main menu", True, pink), (155, 420))
             pygame.display.update()
-    
