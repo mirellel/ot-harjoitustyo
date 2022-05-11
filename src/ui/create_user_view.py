@@ -44,7 +44,7 @@ class CreateUserView:
             return
 
         try:
-            game_service.create_user(username, password)
+            game_service.create(username, password)
             self._handle_create_user()
         except UsernameExistsError:
             self._show_error(f'Username {username} already exists')
