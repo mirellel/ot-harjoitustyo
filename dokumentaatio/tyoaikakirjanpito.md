@@ -11,6 +11,6 @@
 |25.4.  |4h    | kirjautumismahdollisuuden luonti |
 |2.5.   |4h    | kirjautumisen parantelua, vertaisarviointi|
 |3.5.   |2h    | docsting-dokumentointi, startmenun quit nappi |
-|       |      | |
-|       |      | |
-|   yht    |   38,5h   | | 
+|11.5.  |4h    | kirjauddutua sisään, pelinäkymä aukeaa suoraan|
+|14.5.  |7h |pelitilastot, testejä |
+|   yht    |   49,5h   | | 
