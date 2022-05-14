@@ -10,14 +10,14 @@ Sovelluksella on vain yksi käyttäjärooli
 
 ## Käyttöliittymät
 Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista luoda uusi käyttäjä. Käyttäjän luomiselle 
-on oma luomisnäkymä. Onnistuneen kirjautumisen jälkeen avautuu valikko, josta voi valita uuden pelin, pelitilastot, tai kirjautua ulos. 
+on oma luomisnäkymä. Onnistuneen kirjautumisen jälkeen avautuu valikko, josta voi valita uuden pelin, pelitilastot, tai kirjautua ulos. (TEHTY)
 
 ## Toiminnallisuudet
 Pelin pelaaminen (TEHTY)
 Game menu (ALUSTAVA TEHTY)
 Sovellukseen voi luoda käyttäjän (TEHTY)
 Sovellukseen voi kirjautua (TEHTY)
-Käyttäjä näkee omat pelitilastonsa
+Käyttäjä näkee omat pelitilastonsa (TEHTY)
 
 ## Ennen kirjautumista
 - Käyttäjä voi luoda järjestelmään käyttäjätunnuksen
@@ -29,10 +29,11 @@ Käyttäjä näkee omat pelitilastonsa
 ## Kirjautumisen jälkeen
 - Käyttäjä voi valita, että pelaa uuden pelin
 - Käyttäjä voi nähdä omat pelitilastonsa
-   - Tilastoissa näkyy pelien voittoprosentti ja jakauma siitä, kuinka monennella arvauksella käyttäjä sai sanan        oikein
+   - Tilastoissa näkyy pelien voittoprosentti
 - Käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 - Mahdollisuus vaihtaa pelinäkymän värejä/teemaa
 - Käyttäjä voi valita 6-kirjaimen peliversion
 - Yleiset tilastot, jossa näkyy eniten voittoja tehneet pelaajat ja käyttäjän oma sijoitus
+- jakauma siitä, monennella vuorolla käyttäjä on voittanut pelejä
