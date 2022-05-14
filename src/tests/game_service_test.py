@@ -34,7 +34,8 @@ class TestGameService(unittest.TestCase):
     def setUp(self):
         self.service = GameService(FakeUserRepository())
 
-        self.user_miiris = User('miiris', 'fili123')
+        self.user_miiris = User('miiris', 'fili123', 0, 0)
+        self.user_aarni = User('aarni', 'salasana', 0, 0)
 
     def login_user(self, user):
         self.service.create(user.username, user.password)
@@ -70,3 +71,8 @@ class TestGameService(unittest.TestCase):
         current = self.service.get_current_user()
 
         self.assertEqual(current.username, self.user_miiris.username)
+
+    def test_logout(self):
+        self.service.logout()
+        current = self.service.get_current_user()
+        self.assertEqual(current, None)

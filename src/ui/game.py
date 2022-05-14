@@ -52,6 +52,7 @@ class MainRun():
         self.guess = ""
         window.fill(white, (0, 500, 500, 200))
 
+
     def process_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

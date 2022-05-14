@@ -3,7 +3,6 @@ from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
-
 class InvalidCredentialsError(Exception):
     pass
 
@@ -44,6 +43,7 @@ class GameService:
 
         self._user = user
         return user
+
 
     def get_current_user(self):
         """Paluttaa kirjautuunen käyttäjän.
@@ -86,7 +86,7 @@ class GameService:
         if existing_user:
             raise UsernameExistsError(f'Username {username} already exists')
 
-        user = self._user_repository.create(User(username, password))
+        user = self._user_repository.create(User(username, password, 0, 0))
 
         if login:
             self._user = user

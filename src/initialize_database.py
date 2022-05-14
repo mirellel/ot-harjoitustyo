@@ -14,8 +14,10 @@ def create_tables(connection):
     cursor = connection.cursor()
     cursor.execute('''
         create table users (
-            username text primary key,
-            password text
+            username TEXT PRIMARY KEY,
+            password TEXT,
+            games_won INTEGER,
+            games_played INTEGER
         );
     ''')
     connection.commit()

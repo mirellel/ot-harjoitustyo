@@ -1,5 +1,5 @@
 from tkinter import ttk, StringVar, constants
-from services.game_service import game_service, InvalidCredentialsError
+from services.game_service import GameService, game_service, InvalidCredentialsError
 from ui.game_ui import Main
 
 
@@ -11,13 +11,13 @@ class LoginView:
         self._handle_login = handle_login
         self._handle_show_create_user_view = handle_show_create_user_view
         self._frame = None
+        self.user = None
         self._username_entry = None
         self._password_entry = None
         self._error_variable = None
         self._error_label = None
-        self._run_game = Main()
-
         self._initialize()
+        self._service = GameService()
 
     def pack(self):
         '''näyttää näkymän'''
@@ -32,16 +32,28 @@ class LoginView:
         username = self._username_entry.get()
         password = self._password_entry.get()
 
-        try:
-            game_service.login(username, password)
-            self._handle_login()
-        except InvalidCredentialsError:
+        self.user = self._service.login(username, password)
+
+        if not username or not password:
+            self._show_error('fill all needed fields')
+        
+        if not self.user:
+            self._password_entry.delete(0, 'end')
             self._show_error('Invalid username or password')
+        
+        self._handle_run_game()
 
     def _show_error(self, message):
         '''näyttää virheimoituksen'''
         self._error_variable.set(message)
         self._error_label.grid()
+
+
+    def _handle_run_game(self):
+        '''avaa pelinäkymän'''
+        run_game = Main(self._username_entry.get())
+        self._frame.destroy()
+        run_game.start_menu()
 
     def _hide_error(self):
         '''piilotta virheilmoituksen'''
@@ -65,10 +77,6 @@ class LoginView:
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
 
-    def _handle_run_game(self):
-        '''avaa pelinäkymän'''
-        self._frame.destroy()
-        self._run_game.start_menu()
 
     def _initialize(self):
         '''luo login näkymän ja napit'''
@@ -90,7 +98,7 @@ class LoginView:
         login_button = ttk.Button(
             master=self._frame,
             text='Login',
-            command=self._handle_run_game
+            command=self._login_handler
         )
 
         create_user_button = ttk.Button(

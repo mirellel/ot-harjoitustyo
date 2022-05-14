@@ -2,8 +2,8 @@ import pygame
 pygame.init()
 
 # kaksi fonttikokoa
-font = pygame.font.SysFont("Arial", 40, 'bold')
-largefont = pygame.font.SysFont("Arial", 60, 'bold')
+font = pygame.font.SysFont("Arial", 40)
+largefont = pygame.font.SysFont("Arial", 60)
 
 clock = pygame.time.Clock()
 window = pygame.display.set_mode((500, 600))

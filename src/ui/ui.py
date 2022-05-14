@@ -46,7 +46,7 @@ class UI:
 
         self._current_view = CreateUserView(
             self._root,
-            self._show_stats_view,
+            self._handle_create_user,
             self._show_login_view
         )
 
