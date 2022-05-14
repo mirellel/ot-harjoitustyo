@@ -4,4 +4,4 @@ Ohjelmaa on testattu automatisoiduilla unittestilla.
 
 Testikattavuus
 
-![image](https://user-images.githubusercontent.com/101889891/162957871-61d736e9-bc82-495e-8b59-83ef407396c3.png)
+![image](https://user-images.githubusercontent.com/101889891/168440459-c04689e1-57ae-401c-98f8-49f9fe1267e4.png)
