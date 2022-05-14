@@ -2,6 +2,7 @@
 
 ## Rakenne
 Koodin pakkausrakenne on seuraava
+
 ![image](https://user-images.githubusercontent.com/101889891/166429870-c36d6496-f4f1-46c2-a0a3-3d0e338ccc1a.png)
 
 Pakkaus ui sisältää käyttöliittymästä, services sovelluslogiikasta ja repositories tietojen pysyväistallennuksesta vastaavan koodin. Pakkaus entities sisältää luokan User, joka kuvaa sovelluksen käyttämää tietokohdetta user.
@@ -12,10 +13,9 @@ Käyttöliittymä on jakautunut käyttäjäkäyttöliittymään ja pelikäyttöl
 __Käyttäjäkäyttöliittymä__
 - sisäänkirjautumisnäkymä
 - näkymä uuden käyttäjän luomiseen
-- stats -näkymä, josta voi avata pelin ja nähdä tilastonsa
 
 __Pelikäyttöliittymä__
-- aloitusmenu
+- aloitusmenu, jossa näkyy mm. pelitilastot
 - pelinäkymä
 - loppumenu riippuen voitosta
 
@@ -59,12 +59,13 @@ sequenceDiagram
   participant UI
   participant GameService
   participant UserRepository
+  participant LoginView
   User->>UI: click "Login" button
   UI->>GameService: login("mirelle", "salasana1")
   GameService->>UserRepository: find_by_username("mirelle")
   UserRepository-->>GameService: user
   GameService-->>UI: user
-  UI->>UI: show_stats_view()
+  UI->>LoginView: run_game()
 ```
 ### Pelin pelaaminen
 Käyttäjän kirjaudutta sisään ja painettuaan _Play_-nappia, etenee sovelluksen kontrolli seuraavasti
@@ -82,3 +83,11 @@ sequenceDiagram
   Main-->>Main: win_menu()
 ```
 
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+### Käyttöliittymä
+
+Graafisen käyttöliittymän koodissa on jonkin verran toisteisuuttaa, josta voisi toteuttaa omia komponenttejaan. 
+
+### Sovelluslogiikka
+Sisäänkirjautumisen jälkeen ei voi enää kirjautua ulos, vaan sovellus pitää sulkea pelinäkymän "Guit game"-napista
