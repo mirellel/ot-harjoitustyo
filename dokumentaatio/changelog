@@ -22,3 +22,8 @@
 ## Viikko 6
 - Sovellus avautuu kirjautumisnäkymään
 - kirjauduttua sisään voi pelata peliä
+
+## Viikko 7
+- Pelin aloitusmenusta näkyy käyttäjän pelitilastot
+   - tilastoissa näkyy voitot, pelatut pelit ja voittoprosentti
+- Kirjauduttua sisään, avautuu suoraan pelinäkymä
