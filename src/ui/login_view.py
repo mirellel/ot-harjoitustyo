@@ -1,6 +1,6 @@
 '''importataan tarvittavat luokat ja kirjastot'''
-from tkinter import ttk, StringVar, constants, messagebox
-from services.game_service import GameService
+from tkinter import ttk, StringVar, constants
+from services.game_service import GameService, InvalidCredentialsError
 from ui.game_ui import Main
 
 class LoginView: #pylint: disable=too-many-instance-attributes
@@ -34,14 +34,11 @@ class LoginView: #pylint: disable=too-many-instance-attributes
 
         self.user = self._service.login(username, password)
 
-        if not username or not password:
-            messagebox.showerror('fill all needed fields')
-
-        if not self.user:
-            self._password_entry.delete(0, 'end')
-            messagebox.showerror('Invalid username or password')
-
-        self._handle_run_game()
+        try:
+            self._service.login(username, password)
+            self._handle_run_game()
+        except InvalidCredentialsError:
+            self._show_error("Invalid username or password")
 
     def _show_error(self, message):
         '''näyttää virheimoituksen'''
