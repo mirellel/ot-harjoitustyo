@@ -21,6 +21,7 @@ poetry run invoke start
 
 ## Kirjautuminen
 Sovellus käynnistyy kirjautumisnäkymään
+
 ![image](https://user-images.githubusercontent.com/101889891/166432882-e9b8d22b-480b-4526-8533-e1f6956d83fe.png)
 
 Kirjautuminen onnistuu kirjoittamalla olemassaoleva käyttäjätunnus sekä salasana syöttökenttän ja painamalla "Login"-painiketta
@@ -32,16 +33,19 @@ Uusi käyttäjä luodaan syöttämällä tiedot syötekenttiin ja painamalla "Cr
 
 ![image](https://user-images.githubusercontent.com/101889891/166433316-0eef12d7-63ad-4611-ac56-274ab100fb69.png)
 
-Jos käyttäjän luominen onnistuu, siirtyy ohjelma käyttäjänäkymään.
+HUOM! käyttäjänimen tulee olla kokonaan pienillä kirjaimilla.
+
+Jos käyttäjän luominen onnistuu, syöttökentät pyyhkiytyvät ja käyttäjä voi siirtyä kirjautumisnäkymään painamalla "Login"-painiketta.
 
 ## Pelaaminen
 
-Kun käyttäjä on kirjautunut sisään, hän voi käynnistää pelin painamalla "Play"-painiketta.
+Kun käyttäjä on kirjautunut sisään, pelinäkymä avautuu heti.
 
-Nyt ruudulle avautuu pelinäkymän aloitusmenu, josta pelin voi aloittaa painamalla "Start game"-painiketta. Sovelluksen voi sulkea painamalla "Quit"-painiketta.
+Pelinäkymä avautuu ensin aloitusmenuun, jossa näkyy kirjautuneen käyttäjän käyttäjätunnus, voitettujen pelien määrä, pelattujen pelien määrä ja voittoprosentti. Pelin voi aloittaa painamalla "START GAME"-painiketta. Sovelluksen voi sulkea painamalla "QUIT"-painiketta.
 
-![aloitusmenu](https://user-images.githubusercontent.com/101889891/166437141-1232f5b8-e9cd-4a8c-ac22-211a66daa281.png)
+![startmenu](https://user-images.githubusercontent.com/101889891/168469179-8dfbf220-2e3d-442c-ad02-784b64d44a55.png)
 
+"START GAME"-painikkeen painamisen jälkeen ruudulle avautuu peli:
 
 ![tyhjäpeliruutu](https://user-images.githubusercontent.com/101889891/166434022-cf66d537-0c84-4903-990c-bb089acc5272.png)
 
@@ -51,11 +55,15 @@ Peliä pelataan kirjoittamalla 5-kirjaiminen englanninkielinen sana ja painamall
 
 Jos käyttäjän arvaama sana ei ole sovelluksen hyödyntämässä sanalistassa tai arvattu sana on liian lyhyt, antaa peli virheilmoituksen.
 
-Vihreä ruutu tarkoittaa, että kirjain on voittosanassa täysin samassa paikassa. Keltainen ruutu tarkoittaa että kirjain on voittosanassa, mutta väärässä kohdassa. Harmaa ruutu tarkoittaa, että kirjain ei ole voittosanassa ollenkaan.
+Vihreä ruutu tarkoittaa, että kirjain on voittosanassa täysin samassa paikassa. 
+Keltainen ruutu tarkoittaa että kirjain on voittosanassa, mutta väärässä kohdassa. 
+Harmaa ruutu tarkoittaa, että kirjain ei ole voittosanassa ollenkaan.
 
 Jos käyttäjä ehtii arvata voittosanan oikein kuudella yrityksellä, voittaa hän pelin. Tämän jälkeen avautuu menu, jossa lukee voittosana. Menusta voi valita uuden pelin "Replay"-painiketta painamalla tai palata takaisin aloitusmenun "Main menu"-painiketta painamalla.
 
 ![voittomenu](https://user-images.githubusercontent.com/101889891/166434514-b90e028a-c0a6-4205-a660-08cb968de5cc.png)
+![häviömenu](https://user-images.githubusercontent.com/101889891/168469419-eb9c14d7-a085-404d-b8ca-e0dfc74a7c28.png)
+
 
 
 
