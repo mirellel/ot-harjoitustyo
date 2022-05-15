@@ -1,27 +1,28 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-Sovelluksella voi pelata wordle-tyyppistä peliä (TEHTY)
-Wordle on newyorktimes -lehden sanaarvauspeli, jossa pelaajan tulee kuudella vuorolla arvata oikein 5-kirjaiminen 
-englanninkielinen sana. Peli näyttää jokaisen arvauksen jälkeen oikealla paikalla olevat kirjaimet vihreällä ja oikeassa sanassa olevat, mutta arvauksessa väärässä kohdassa olevat kirjaimet keltaisella
+Sovelluksella voi pelata wordle-tyyppistä peliä
+Wordle on The Newyork Times -lehden julkaisema sanaarvauspeli, jossa pelaajan tulee kuudella vuorolla arvata oikein 5-kirjaiminen 
+englanninkielinen sana. Peli näyttää jokaisen arvauksen jälkeen oikealla paikalla olevat kirjaimet vihreällä ja oikeassa sanassa olevat, mutta arvauksessa väärässä kohdassa olevat kirjaimet keltaisella.
 
 ## Käyttäjät
 Sovelluksella on vain yksi käyttäjärooli
 
 ## Käyttöliittymät
-Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista luoda uusi käyttäjä. Käyttäjän luomiselle 
-on oma luomisnäkymä. Onnistuneen kirjautumisen jälkeen avautuu valikko, josta voi valita uuden pelin, pelitilastot, tai kirjautua ulos. (TEHTY)
+Sovellus aukeaa kirjautumisnäkymään, josta on mahdollista luoda uusi käyttäjä. 
+Käyttäjän luomiselle on oma luomisnäkymä. 
+Onnistuneen kirjautumisen jälkeen avautuu pelinäkymä, josta voi nähdä omat pelitilastot, aloittaa pelin ja sulkea sovelluksen.
 
 ## Toiminnallisuudet
-Pelin pelaaminen (TEHTY)
-Game menu (ALUSTAVA TEHTY)
-Sovellukseen voi luoda käyttäjän (TEHTY)
-Sovellukseen voi kirjautua (TEHTY)
-Käyttäjä näkee omat pelitilastonsa (TEHTY)
+Pelin pelaaminen
+Game menut
+Sovellukseen voi luoda käyttäjän
+Sovellukseen voi kirjautua
+Käyttäjä näkee omat pelitilastonsa
 
 ## Ennen kirjautumista
 - Käyttäjä voi luoda järjestelmään käyttäjätunnuksen
-   - Tunnus pitää olla uniikki ja vähintään kolmen merkin pituinen
+   - Tunnus pitää olla uniikki ja pienillä kirjaimilla kirjoitettu
 - Käyttäjä voi kirjautua järjestelmään
    - Kirjautuminen onnistuu, kun syötetään olemassaoleva käyttäjätunnus ja oikea salasana
    - Järjestelmä ilmoittaa virheestä, jos salasana on väärin tai käyttäjätunnusta ei ole
@@ -30,7 +31,7 @@ Käyttäjä näkee omat pelitilastonsa (TEHTY)
 - Käyttäjä voi valita, että pelaa uuden pelin
 - Käyttäjä voi nähdä omat pelitilastonsa
    - Tilastoissa näkyy pelien voittoprosentti
-- Käyttäjä voi kirjautua ulos järjestelmästä
+- Käyttäjä voi sulkea sovelluksen
 
 ## Jatkokehitysideoita
 - Mahdollisuus vaihtaa pelinäkymän värejä/teemaa
