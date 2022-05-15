@@ -9,8 +9,9 @@ checkguess = CheckGuess()
 
 
 class MainRun():
-    # luokka joka vastaa pelin toiminnasta ja renderöinnistä näytölle
+    '''luokka, joka vastaa pelin pyörittämisestä ja renderöinnistä näytölle'''
     def __init__(self):
+        '''luokan konstruktori'''
         pygame.init()
         self.time1 = 0
         self.time2 = 0
@@ -31,12 +32,12 @@ class MainRun():
                     60 + (i*80), 50 + (j*80), 50, 50), 2)
 
     def check_win(self):
-        # tarkastaa voiton
+        '''funktio, joka tarkastaa onko arvattu sana voittosana'''
         if checkguess.check(self.word, self.guess) == self.win_list:
             self.win = True
 
     def check_guess(self):
-        # tarkastaa arvauksen
+        '''funktio, joka tarkastaa arvauksen ja piirtää sen peliruudulle'''
         spacing = 0
         for j in range(0, 5):
             checkguess.renderlist[j] = font.render(
@@ -53,6 +54,7 @@ class MainRun():
         window.fill(white, (0, 500, 500, 200))
 
     def process_events(self):
+        '''funktio, joka vastaa arvauksista'''
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()

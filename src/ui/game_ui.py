@@ -16,14 +16,24 @@ class Main():
         self.user = user
 
     def get_games_won(self):
+        '''funktio, joka hakee voitettujen pelien määrän tietokannasta
+        Returns:
+            voitettujen pelien määrä int-arvona'''
         games_won = user_repository.get_games_won(self.user)
         return games_won
 
     def get_games_played(self):
+        '''Funktio, joka hakee pelattujen pelien määrän tietokannasta
+        Returns:
+            pelattujen pelien määrän int-arvona'''
         games_played = user_repository.get_games_played(self.user)
         return games_played
 
     def get_win_percentage(self):
+        '''funktio, joka laskee voitettujen pelien proentuaalisen määrän
+        pelatuista peleistä
+        Returns:
+            voittoprosentti int-arvona, pyöristettynä yhteen desimaaliin'''
         games_won = self.get_games_won()
         games_played = self.get_games_played()
         if games_played > 0 and games_won > 0:
