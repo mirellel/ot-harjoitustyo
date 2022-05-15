@@ -6,13 +6,15 @@ from settings import clock, window, white, pink, start_game, \
 
 from repositories.user_repository import user_repository
 
+
 class Main():
     '''Luokka joka vastaa pelin menuista ja pyörittämisestä'''
+
     def __init__(self, user):
         '''luokan konstruktori'''
         self.game = MainRun()
         self.user = user
-        
+
     def get_games_won(self):
         games_won = user_repository.get_games_won(self.user)
         return games_won
@@ -20,10 +22,14 @@ class Main():
     def get_games_played(self):
         games_played = user_repository.get_games_played(self.user)
         return games_played
+
     def get_win_percentage(self):
         games_won = self.get_games_won()
         games_played = self.get_games_played()
-        win_perc = (games_won/games_played)*100
+        if games_played > 0 and games_won > 0:
+            win_perc = (games_won/games_played)*100
+        else:
+            win_perc = 0
         return round(win_perc, 1)
 
     def run_game(self):
@@ -63,7 +69,7 @@ class Main():
                     if 50 <= mouse[0] <= 450 and 300 <= mouse[1] <= 400:
                         pygame.quit()
                         sys.exit()
-                    
+
             pygame.draw.rect(window, white, pygame.Rect(50, 150, 400, 100))
             if 50 <= mouse[0] <= 450 and 150 <= mouse[1] <= 250:
                 pygame.draw.rect(window, (242, 242, 242),

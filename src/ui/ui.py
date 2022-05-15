@@ -1,3 +1,4 @@
+'''importataan tarvittavat luokat'''
 from ui.login_view import LoginView
 from ui.create_user_view import CreateUserView
 
@@ -16,7 +17,7 @@ class UI:
 
     def start(self):
         '''käynnistää käyttöliittymän'''
-        self._show_login_view()
+        self.show_login_view()
 
     def _hide_current_view(self):
         '''tuhoaa nykyisen näkymän'''
@@ -26,12 +27,12 @@ class UI:
         self._current_view = None
 
     def _hande_login(self):
-        self._show_login_view()
+        self.show_login_view()
 
     def _handle_create_user(self):
         self._show_create_user_view()
 
-    def _show_login_view(self):
+    def show_login_view(self):
         '''näyttää login näkymän'''
         self._hide_current_view()
 
@@ -47,7 +48,7 @@ class UI:
         self._current_view = CreateUserView(
             self._root,
             self._handle_create_user,
-            self._show_login_view
+            self.show_login_view
         )
 
         self._current_view.pack()

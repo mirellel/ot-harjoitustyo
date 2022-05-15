@@ -1,5 +1,7 @@
+'''importataan tietokantayhteys ja User-olio'''
 from entities.user import User
 from database_connection import get_database_connection
+
 
 class UserRepository:
     """Käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka.
@@ -11,7 +13,6 @@ class UserRepository:
             connection: Tietokantayhteyden Connection-olio
         """
         self._connection = get_database_connection()
-
 
     def create(self, user):
         """Tallentaa käyttäjän tietokantaan.
@@ -89,11 +90,12 @@ class UserRepository:
         '''Hakee tietokannasta kirjautuneen pelaajan sen hetkisen voittojen määrän
         Args:
             username: pelaajan käyttäjänimi
-            
+
         Returns:
             palauttaa pelaajan voitettujen pelien määrän'''
         cursor = self._connection.cursor()
-        cursor.execute('SELECT games_won from users WHERE username = ?', [username])
+        cursor.execute(
+            'SELECT games_won from users WHERE username = ?', [username])
         games_won = cursor.fetchone()[0]
 
         return games_won
@@ -102,11 +104,12 @@ class UserRepository:
         '''Hakee tietokannasta kirjautuneen pelaajan sen hetkisen pelien määrän
         Args:
             username: pelaajan käyttäjänimi
-            
+
         Returns:
             palauttaa pelaajan pelattujen pelien määrän'''
         cursor = self._connection.cursor()
-        cursor.execute('SELECT games_played from users WHERE username = ?', [username])
+        cursor.execute(
+            'SELECT games_played from users WHERE username = ?', [username])
         games_played = cursor.fetchone()
         games_played = games_played[0]
 
@@ -115,25 +118,26 @@ class UserRepository:
     def update_games_won(self, username):
         '''Päivittää pelaajan voitettujen pelien määrän tietokantaan
         Args:
-            username: pelaajan käyttäjänimi 
+            username: pelaajan käyttäjänimi
         '''
         cursor = self._connection.cursor()
         games_won_new = self.get_games_won(username)+1
-        
+
         cursor.execute("UPDATE users SET games_won=? WHERE username=?",
-            (games_won_new, username))
+                       (games_won_new, username))
         self._connection.commit()
 
     def update_games_played(self, username):
         '''Päivittää pelaajan pelattujen pelien määrän tietokantaan
         Args:
-            username: pelaajan käyttäjänimi 
+            username: pelaajan käyttäjänimi
         '''
         cursor = self._connection.cursor()
         games_played_new = self.get_games_played(username)+1
         cursor.execute("UPDATE users SET games_played=? WHERE username=?",
-            (games_played_new, username))
+                       (games_played_new, username))
         self._connection.commit()
+
 
 user_repository = UserRepository()
 users = user_repository.find_all()

@@ -1,8 +1,8 @@
-from tkinter import ttk, StringVar, constants
+'''importataan tarvittavat kirjastot ja luokat'''
+from tkinter import ttk, StringVar, constants,messagebox
 from services.game_service import game_service, UsernameExistsError
 
-
-class CreateUserView:
+class CreateUserView: #pylint: disable=too-many-instance-attributes
     '''Luokka joka vastaa create user käyttöliittymän luonnista'''
 
     def __init__(self, root, handle_create_user, handle_show_login_view):
@@ -11,7 +11,8 @@ class CreateUserView:
             root:
                 TKinter-elementti, jonka sisään näkymä alustetaan.
             handle_create_user:
-                Kutsuttava-arvo, jota kutsutaan kun käyttäjä luodaan. Saa argumentteina käyttäjätunnuksen ja salasanan.
+                Kutsuttava-arvo, jota kutsutaan kun käyttäjä luodaan.
+                Saa argumentteina käyttäjätunnuksen ja salasanan.
             handle_show_login_view:
                 Kutsuttava-arvo, jota kutsutaan kun siirrytään kirjautumisnäkymään.
         """
@@ -40,7 +41,7 @@ class CreateUserView:
         password = self._password_entry.get()
 
         if len(username) == 0 or len(password) == 0:
-            self._show_error('Username and password is required')
+            messagebox.showerror('Username and password is required')
             return
 
         try:

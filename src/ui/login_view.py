@@ -1,9 +1,9 @@
-from tkinter import ttk, StringVar, constants
-from services.game_service import GameService, game_service, InvalidCredentialsError
+'''importataan tarvittavat luokat ja kirjastot'''
+from tkinter import ttk, StringVar, constants, messagebox
+from services.game_service import GameService
 from ui.game_ui import Main
 
-
-class LoginView:
+class LoginView: #pylint: disable=too-many-instance-attributes
     '''Luokka joka vastaa login käyttöliittymän luonnista'''
 
     def __init__(self, root, handle_login, handle_show_create_user_view):
@@ -35,19 +35,18 @@ class LoginView:
         self.user = self._service.login(username, password)
 
         if not username or not password:
-            self._show_error('fill all needed fields')
-        
+            messagebox.showerror('fill all needed fields')
+
         if not self.user:
             self._password_entry.delete(0, 'end')
-            self._show_error('Invalid username or password')
-        
+            messagebox.showerror('Invalid username or password')
+
         self._handle_run_game()
 
     def _show_error(self, message):
         '''näyttää virheimoituksen'''
         self._error_variable.set(message)
         self._error_label.grid()
-
 
     def _handle_run_game(self):
         '''avaa pelinäkymän'''
@@ -76,7 +75,6 @@ class LoginView:
 
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
-
 
     def _initialize(self):
         '''luo login näkymän ja napit'''

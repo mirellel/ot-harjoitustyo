@@ -52,7 +52,6 @@ class MainRun():
         self.guess = ""
         window.fill(white, (0, 500, 500, 200))
 
-
     def process_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -68,7 +67,6 @@ class MainRun():
                     elif event.key == pygame.K_RETURN:
                         # hyväksytään vain viisikirjaiminen arvaus
                         if len(self.guess) == 5:
-                            print(self.guess.lower())
                             # tarkastetaan onko arvaus kelpaava sana
                             if self.guess.lower() in self.wordlist:
                                 # kutsutaan checkguess luokkaa tarkastamaan arvaus

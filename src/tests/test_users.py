@@ -32,7 +32,7 @@ class TestUserRepository(unittest.TestCase):
         user_repository.create(self.user1)
         wins = user_repository.get_games_won(self.user1.username)
         self.assertEqual(wins, self.user1.games_won)
-    
+
     def test_get_plays(self):
         user_repository.create(self.user1)
         plays = user_repository.get_games_won(self.user1.username)
@@ -49,4 +49,3 @@ class TestUserRepository(unittest.TestCase):
         user_repository.update_games_played(self.user3.username)
         plays = user_repository.get_games_played(self.user3.username)
         self.assertEqual(plays, self.user3.games_won)
-

@@ -1,7 +1,7 @@
-from settings import *  # pylint: disable=unused-wildcard-import, disable=wildcard-import
+'''importataan tarvittavat värit'''
+from settings import grey, yellow, green
 
-
-class CheckGuess():
+class CheckGuess(): # pylint: disable=too-few-public-methods
     '''Pelilogiikasta vastaavaluokka'''
 
     def __init__(self):

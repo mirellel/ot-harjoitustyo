@@ -1,10 +1,6 @@
+'''Docstring'''
 class User:
-    ''' luokka, joka kuvaa yksittäistä käyttäjää
-    Attributes:
-        username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta.
-        password: Merkkijonoarvo, joka kuvaa käyttäjän salasanaa.
-    '''
-
+    '''luokka, joka kuvaa yksittäistä käyttäjää'''
     def __init__(self, username, password, games_won, games_played):
         """Luokan konstruktori, joka luo uuden käyttäjän.
         Args:

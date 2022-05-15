@@ -1,14 +1,20 @@
+'''importataan User-olio ja repositorio'''
 from entities.user import User
 from repositories.user_repository import (
     user_repository as default_user_repository
 )
 
-class InvalidCredentialsError(Exception):
-    pass
 
+class InvalidCredentialsError(Exception):
+    ''' virhe virheellisitä käyttäjätunnuksista
+    Args:
+        Exception'''
 
 class UsernameExistsError(Exception):
-    pass
+    '''virhe jo olemassa olevasta käyttäjänimestä
+    Args:
+        Exception
+    '''
 
 
 class GameService:
@@ -43,7 +49,6 @@ class GameService:
 
         self._user = user
         return user
-
 
     def get_current_user(self):
         """Paluttaa kirjautuunen käyttäjän.
