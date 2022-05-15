@@ -13,4 +13,5 @@
 |3.5.   |2h    | docsting-dokumentointi, startmenun quit nappi |
 |11.5.  |4h    | kirjauddutua sisään, pelinäkymä aukeaa suoraan|
 |14.5.  |7h |pelitilastot, testejä |
-|   yht    |   49,5h   | | 
+|15.5.  |3h |viimeistely, dokumentaatio, loppupalautus release |
+|   yht    |   52,5h   | | 
